@@ -116,16 +116,19 @@ const Account = () => {
 
           <div>
             <button
-              className="button primary block"
+              className="button primary rw-button m-1 block bg-gray-800 text-white hover:bg-gray-700"
               onClick={() => updateProfile({ username, website, avatar_url })}
               disabled={loading}
             >
-              {loading ? 'Loading ...' : 'Update'}
+              {loading ? 'Loading ...' : 'Update Profile'}
             </button>
           </div>
 
           <div>
-            <button className="button block" onClick={() => logOut()}>
+            <button
+              className="button rw-button m-1 block border-2 border-solid border-black bg-white text-black hover:border-2 hover:border-solid hover:bg-gray-300 hover:text-black"
+              onClick={() => logOut()}
+            >
               Sign Out
             </button>
           </div>

@@ -14,7 +14,11 @@ const HomePage = () => {
       <h1>HomePage</h1>
       <>{!isAuthenticated ? <Auth /> : <Account />}</>
       <hr />
-      <Link to={routes.login()}>Login page</Link>
+      <Link to={routes.login()}>
+        <button className="rw-button mx-1 bg-black text-white">
+          Go Login page
+        </button>
+      </Link>
     </div>
   )
 }
