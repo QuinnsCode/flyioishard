@@ -2,10 +2,8 @@
 
 set -ex
 
-# npx prisma is failing due to != verification hash
-# try
-# npm cache verify
-# npm cache clean --force
+# This command pushes us over 256MB of RAM at release time
+# yarn rw prisma migrate deploy
 
-# npx prisma migrate deploy --schema /home/node/app/api/db/schema.prisma
-# npx @redwoodjs/cli-data-migrate@canary --import-db-client-from-dist
+# This alternative command uses less memory
+npx prisma migrate deploy --schema /app/api/db/schema.prisma
