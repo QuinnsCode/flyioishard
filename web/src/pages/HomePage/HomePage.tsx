@@ -1,28 +1,21 @@
-import ParticipantCell from 'src/components/ParticipantCell'
-import { Constants } from 'src/utils/Constants'
+// import { Metadata } from '@redwoodjs/web'
+import { Link, routes } from '@redwoodjs/router'
 
-interface Props {
-  slug: string
-}
+import { useAuth } from 'src/auth'
+import Account from 'src/components/Account/Account'
+import Auth from 'src/components/Auth/Auth'
 
-/**
- *  Within the ParticipantForm component (nested inside the ParticipantCell
- * component), there's a `useEffect` that looks for a cookie called
- * `participantId`. If that cookie exists, then the user will be redirected
- * to the /customize page
- */
-
-const HomePage = ({ slug }: Props) => {
-  if (!slug) {
-    slug = Constants.DEFAULT_PARTNER_SLUG
-  }
-
+const HomePage = () => {
+  const { isAuthenticated } = useAuth()
   return (
-    <>
-      <main className="page">
-        <ParticipantCell slug={slug.toLowerCase()} />
-      </main>
-    </>
+    <div>
+      {/* <Metadata title="Home" description="Home page" /> */}
+
+      <h1>HomePage</h1>
+      <>{!isAuthenticated ? <Auth /> : <Account />}</>
+      <hr />
+      <Link to={routes.login()}>Login page</Link>
+    </div>
   )
 }
 

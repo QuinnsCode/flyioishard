@@ -1,3 +1,4 @@
+import { authDecoder } from '@redwoodjs/auth-supabase-api'
 import { useResponseCache, createInMemoryCache } from '@envelop/response-cache'
 
 import { authDecoder } from '@redwoodjs/auth-dbauth-api'

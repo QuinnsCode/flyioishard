@@ -8,6 +8,7 @@
   },
   "devDependencies": {
     "@redwoodjs/auth-dbauth-setup": "7.0.0-canary.285",
+    "@redwoodjs/auth-supabase-setup": "7.0.0-canary.285",
     "@redwoodjs/cli-storybook": "7.0.0-canary.285",
     "@redwoodjs/core": "7.0.0-canary.285",
     "@redwoodjs/studio": "7.0.0-canary.285",
