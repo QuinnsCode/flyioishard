@@ -10,6 +10,7 @@ import {
   FieldError,
 } from '@redwoodjs/forms'
 import { Link, navigate, routes } from '@redwoodjs/router'
+// import { Metadata } from '@redwoodjs/web'
 import { toast, Toaster } from '@redwoodjs/web/toast'
 
 import { useAuth } from 'src/auth'
@@ -55,6 +56,8 @@ const LoginPage = () => {
 
   return (
     <>
+      {/* <Metadata title="Login" /> */}
+
       <main className="rw-main">
         <Toaster toastOptions={{ className: 'rw-toast', duration: 6000 }} />
         <div className="rw-scaffold rw-login-container">

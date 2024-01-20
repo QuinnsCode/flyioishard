@@ -32,17 +32,20 @@ const SignupPage = () => {
 
   const onSubmit = async (data: Record<string, string>) => {
     const response = await signUp({
-      username: data.username,
+      email: data.username,
       password: data.password,
     })
 
     if (response.message) {
-      toast(response.message)
+      toast(JSON.stringify(response.message))
     } else if (response.error) {
-      toast.error(response.error)
+      toast.error(JSON.stringify(response.error))
     } else {
       // user is signed in automatically
-      toast.success('Welcome!')
+      toast.success('Check email to confirm signup!')
+      setTimeout(() => {
+        navigate(routes.home())
+      }, 3000)
     }
   }
 
